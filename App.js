@@ -2,17 +2,15 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import Home from './src/pages/Home';
-import Dados from './src/pages/Dados';
-import Login from './src/pages/Login';
-
+import EfficiencyForm from './src/pages/EfficiencyForm';
+import Efficiency from './src/pages/Efficiency';
 
 const Stack = createNativeStackNavigator();
 
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Login'
+      <Stack.Navigator initialRouteName='EfficiencyForm'
         screenOptions={{
           headerTitleAlign: "center",
           headerStyle: {
@@ -24,39 +22,18 @@ function App() {
           },
         }}
       >
-
-        {
-          /*
-            em todas as telas(pages) é injetado na props a função navigation()
-          */
-        }
-
-
-
         <Stack.Screen
-          name="Home"
-          component={Home}
+          name="EfficiencyForm"
+          component={EfficiencyForm}
           options={
-            {
-              title: 'Seja Bem-Vindo',
-            }
-          }
-        />
+            { title: "Formulario de eficiência do carro" }
+          } />
         <Stack.Screen
-          name="Dados"
-          component={Dados}
+          name="Efficiency"
+          component={Efficiency}
           options={
-            { title: "Dados do Amigo" }
-          }
-        />
-
-        <Stack.Screen
-          name="Login"
-          component={Login}
-          options={
-            { title: "My Friends APP" }
-          }
-        />
+            { title: "Eficiência" }
+          } />
 
       </Stack.Navigator>
     </NavigationContainer>
